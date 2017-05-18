@@ -1,6 +1,7 @@
-# ESP8266ThermoHumiditySensor with OLED display.
+# ESP8266 Temperature & Humidity Sensor with OLED display.
 
 A control program for collecting temperature &amp; humidity data from various sensors types and displays them on a OLED display. 
+the data is transferred regularly to an MQTT server and can be displayed and processed by any Home Automation System (e.g. OpenHAB)
 
 Features:
 - WIFI
