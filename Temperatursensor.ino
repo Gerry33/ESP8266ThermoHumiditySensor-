@@ -1,9 +1,11 @@
 /**
   A simple temperature  & humidity program to collect temp & hum in a regular intervall.
+  
   	 - forward to MQTT
   	 - determine 24H/max/min
   	 - simple WEB GUI for configuration
   	 - supports SI7021, DHT, DS18X  sensors
+	 
 
  */
 
@@ -75,7 +77,7 @@ TempStatus  ts [ OFS_LAST ];
 TempStatusType * displaySensor = &ts[OFS_SI702];	// the sensor to display: SI 7021  sensor for this display
 
 // mqtt ++++
-const char* 	mqtt_server = "server";		// 10.0.0.102 or server.fritzbox.com
+const char* 	mqtt_server = "server";		// 10.0.0.102 
 AsyncMqttClient mqttClient;
 
 char 			localHostname [30];
@@ -134,7 +136,7 @@ void onWIFIConnectedGotIP(WiFiEventStationModeGotIP ipInfo) {
 		EEPromWriteConfig();
 	}
 
-	NTP.begin("fritz.box", 1, true); // NTP.begin("de.pool.ntp.org", 1, true);
+	NTP.begin("pool.ntp.org", 1, true);
 	NTP.setInterval(3600);	 // 1hr	, 1 day 86400
 
 	strncpy (localHostname, WiFi.hostname().c_str(), min (sizeof (localHostname), strlen(WiFi.hostname().c_str() )) );
@@ -406,7 +408,7 @@ void updateWEBPage (){
 			webPage  .concat(  "<br> topic:" + String (tsp->MqttPubTopic) +":");
 			if (tsp->errCode == 0){
 				if ( tsp->tempValid)
-					webPage  .concat(  "Temperatur: " + String (tsp->temp,1) + "∞C") ;
+					webPage  .concat(  "Temperatur: " + String (tsp->temp,1) + "¬∞C") ;
 				if ( tsp->humValid)
 					webPage  .concat( ", Feuchtigkeit:" + String (tsp->hum) + " %");
 			}else
@@ -713,7 +715,7 @@ void timedUpdateDisplay(){
 	display.setFont(ArialMT_Plain_10);
 	display.drawString (0, 35, "Hoch:" +  String (displaySensor->tempMax,1) + "  Tief:" +  String (displaySensor->tempMin,1));
 
-	// display.setFont(ArialMT_Plain_16);	//  zu groﬂ
+	// display.setFont(ArialMT_Plain_16);	//  zu gro√ü
 	display.drawString (0, 51, NTP.getTimeStr());
 
 	display.setFont(ArialMT_Plain_10);
@@ -809,7 +811,7 @@ void sensor_SI7021() {
 		siSensor->tempValid = siSensor->humValid 	= false;
 		strcpy (siSensor->displayTemp, "Sensor");
 		strcpy (siSensor->displayHum,   "     Fehler");
-		strncpy(siSensor->errMsg, "Fehler;" , sizeof(siSensor->errMsg)); //';' wichtig f¸r das openhab String parsing
+		strncpy(siSensor->errMsg, "Fehler;" , sizeof(siSensor->errMsg)); //';' wichtig f√ºr das openhab String parsing
 	}
 
 }
