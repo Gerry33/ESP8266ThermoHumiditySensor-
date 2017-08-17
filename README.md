@@ -10,7 +10,7 @@ Features:
 - WEB GUI for configuration
 - maximums and minimums temperature of the last 24h.
 - Supports sensors: DHT, SI7021, DS18X
-- OLED Display SSD 1306
+- local OLED Display SSD 1306
 - Analog time display 
 - NTP time synchronisation 
 - connection status in display (IP adr, error conditions)
