@@ -1,7 +1,8 @@
 # ESP8266 Temperature & Humidity Sensor with OLED display.
 
-A control program for collecting temperature &amp; humidity data from various sensors types and displays them on a OLED display. 
-the data is transferred regularly to an MQTT server and can be displayed and processed by any Home Automation System (e.g. OpenHAB)
+A control program for collecting and displaying temperature &amp; humidity data from various sensors types. 
+
+The data is transferred regularly to an MQTT server and can be displayed and processed by any Home Automation System (e.g. OpenHAB)
 
 Features:
 - WIFI
@@ -11,8 +12,15 @@ Features:
 - Supports sensors: DHT, SI7021, DS18X
 - OLED Display SSD 1306
 - maximums and minimums temperature of the last 24h.
-- time & IP display.
+- analog time display 
+- NTP time synchronisation 
+- connection status in display (IP adr, error conditions)
 - Home automation integration by automatic presence announcing to MQTT e.g. to OpenHAB
 - SYSLOG messages 
 - DEBUG mode to be enabled by WEB GUI.
 - Over- the- Air (OTA) (WIFI) update 
+
+See WIKI for more details.
+
+Have fun adapting and modifying  ! 
+Gerry 
