@@ -15,3 +15,4 @@ Features:
 - Home automation integration by automatic presence announcing to MQTT e.g. to OpenHAB
 - SYSLOG messages 
 - DEBUG mode to be enabled by WEB GUI.
+- Over- the- Air (OTA) (WIFI) update 
