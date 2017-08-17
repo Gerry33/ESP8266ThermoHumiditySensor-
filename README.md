@@ -11,8 +11,7 @@ Features:
 - maximums and minimums temperature of the last 24h.
 - Supports sensors: DHT, SI7021, DS18X
 - OLED Display SSD 1306
-- maximums and minimums temperature of the last 24h.
-- analog time display 
+- Analog time display 
 - NTP time synchronisation 
 - connection status in display (IP adr, error conditions)
 - Home automation integration by automatic presence announcing to MQTT e.g. to OpenHAB
