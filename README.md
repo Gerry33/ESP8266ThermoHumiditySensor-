@@ -13,3 +13,5 @@ Features:
 - maximums and minimums temperature of the last 24h.
 - time & IP display.
 - Home automation integration by automatic presence announcing to MQTT e.g. to OpenHAB
+- SYSLOG messages 
+- DEBUG mode to be enabled by WEB GUI.
